@@ -1,0 +1,114 @@
+// Place all the styles related to the forums controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.forums-top {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.btn-square-soft{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: #220a0a;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+    font-weight: bold;
+    background: linear-gradient(#a01e47 0%, #961c4b 100%);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+}
+
+.btn-square-soft:active {
+    /*押したとき*/
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);/*沈むように*/
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    background-image: linear-gradient(#fed6e3 0%, #ffbcbc 100%);/*グラデーションを明るく*/
+}
+
+.forums-image {
+    
+    background-color: aqua;
+    height: 500px;
+    width: 100%;
+    background-repeat:no-repeat;
+    background-size:cover;
+    margin-top: 30px;
+}
+
+.user-ranking {
+
+    width: 200px;
+    height: 150px;
+    margin-left: 20px;
+    background-color: burlywood;
+    display:flex;
+
+}
+
+.like-image {
+    margin-top: 30px;
+    height: 150px;
+    display:flex;
+    width:100%;
+    background-color: rgb(252, 245, 240);
+    justify-content: center;
+}
+
+.rank-image{
+    width: 200px;
+    height: 150px;
+    margin-left: 20px;
+    background-color: burlywood;
+    display:flex;
+
+}
+
+.rank-one{
+
+}
+
+.rank-about{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    width: 150px;
+
+}
+
+.rank-second{
+
+    margin-left: 20px;
+}
+
+
+
+.logo-image{
+
+    width: 150px;
+    height: 150px;
+    margin-left: 20px;
+}
+
+.team-image{
+
+    margin-top: 50px;
+}
+
+
+.team-split {
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px
+}
+

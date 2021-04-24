@@ -1,0 +1,11 @@
+<h1>名古屋グランパス</h1>
+
+<%= link_to "新規投稿へ", new_forum_path %>
+</div>
+
+<% @forums.each do |t| %>
+    <% if t.category == "nagoya" %>  
+    <%= t.user.name %>
+    <p>内容:<%= t.team %></p>
+    <% end %>
+  <% end %>

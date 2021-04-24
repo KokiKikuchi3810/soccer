@@ -1,0 +1,12 @@
+<h1>C大阪</h1>
+
+<%= link_to "新規投稿へ", new_forum_path %>
+</div>
+
+<% @forums.each do |t| %>
+    <% if t.category == "cosaka" %>  
+    <%= t.user.name %>
+    <p>内容:<%= t.about %></p>
+    <% end %>
+  <% end %>
+

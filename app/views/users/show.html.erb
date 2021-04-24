@@ -1,0 +1,26 @@
+<h1>users</h1>
+<p>名前 : <%= @user.name %></p>
+<p>メールアドレス : <%= @user.email %></p>
+
+
+<% if current_user.id == @user.id %>
+  <%= link_to "編集する", edit_user_registration_path %>
+<% end %>
+
+<h2>ユーザーの投稿一覧</h2>
+<% @user.forums.each do |t| %>
+  <%= t.user.name %>
+  <%= t.about %>
+  <%= button_to "削除する", forum_path(t.id), method: :delete %>
+<% end %>
+
+<!-- 以下はいいね機能を実装している場合-->
+<h2>ユーザーがいいねした投稿一覧</h2>
+<% @user.liked_forums.each do |t| %>
+  <%= t.user.name %>
+  <%= t.about %>
+   <%= button_to "削除する", forum_path(t.id), method: :delete %>
+<% end %>
+<!-- ここまで-->
+
+<%= link_to "forum一覧に戻る", forums_path %>

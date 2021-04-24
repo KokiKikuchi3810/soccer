@@ -1,0 +1,170 @@
+<h1>J league forum</h1>
+
+
+<div class="forums-top">
+
+<% if user_signed_in? %>
+
+<%= link_to destroy_user_session_path, class: 'btn-square-soft', method: :delete do %> 
+  <i class="fas fa-sign-out-alt"></i>Logout
+<% end %>
+
+<%= link_to "マイページへ", user_path(current_user.id), class: 'btn-square-soft' %>　
+<%= link_to "新規投稿へ", new_forum_path , class: 'btn-square-soft'%>
+<% else %>
+<%= link_to "ログイン", new_user_session_path , class: 'btn-square-soft' %>
+<%= link_to "新規登録", new_user_registration_path , class: 'btn-square-soft' %>
+<%= link_to "新規投稿へ", new_forum_path, class: 'btn-square-soft' %>
+<% end %>
+</div>
+
+
+<div class="forums-image">
+<%= image_tag "026.png", width:"100%",height:"100%"%>
+</div>
+
+<div class="user-ranking">
+<% @users.each do |u| %>
+  <%= u.name %>
+  <%= u.likes_count %>
+<% end %>
+</div>
+
+
+<div class="like-image">
+
+<% @all_ranks.each do |note| %>
+
+  <div class="rank-image">
+
+
+  <div class="rank-one">
+  <%= note.user.name %>
+  <div class="rank-about">
+  <%= note.about %>
+  </div>
+  </div>
+  <div class="rank-second">
+  <i class="far fa-heart"></i><%= note.likes.count %>
+  </div>
+  </div>
+
+<% end %>
+
+</div>
+
+
+
+
+<div class="team-image">
+
+<div class="team-split">
+
+<%= link_to forums_J1_path do %>
+  <image src="../../../assets/002.jpeg" class="logo-image">
+  <% end %>
+
+
+
+<%= link_to forums_sapporo_path do %>
+<image src="../../../assets/004.jpeg" class="logo-image">
+  <% end %>
+
+
+<%= link_to forums_sendai_path do %>
+  <image src="../../../assets/005.jpeg" class="logo-image">
+  <% end %>
+
+<%= link_to forums_kashima_path do %>
+  <image src="../../../assets/006.jpeg" class="logo-image">
+  <% end %>
+
+<%= link_to forums_urawa_path do %>
+  <image src="../../../assets/007.jpeg" class="logo-image">
+  <% end %>
+
+<%= link_to forums_kashiwa_path do %>
+  <image src="../../../assets/008.jpeg" class="logo-image">
+  <% end %>
+
+
+<%= link_to forums_fctokyo_path do %>
+  <image src="../../../assets/009.jpeg" class="logo-image">
+  <% end %>
+
+  </div>
+
+  <div class="team-split">
+
+<%= link_to forums_kawasaki_path do %>
+  <image src="../../../assets/010.jpeg" class="logo-image">
+  <% end %>
+
+<%= link_to forums_yokohamafm_path do %>
+  <image src="../../../assets/011.jpeg" class="logo-image">
+  <% end %>
+
+
+<%= link_to forums_yokohamafc_path do %>
+  <image src="../../../assets/012.jpeg" class="logo-image">
+  <% end %>
+
+<%= link_to forums_syonan_path do %>
+  <image src="../../../assets/013.jpeg" class="logo-image">
+  <% end %>
+
+<%= link_to forums_shimizu_path do %>
+<image src="../../../assets/014.jpeg" class="logo-image">
+  <% end %>
+
+
+
+<%= link_to forums_nagoya_path do %>
+  <image src="../../../assets/015.jpeg" class="logo-image">
+  <% end %>
+
+<%= link_to forums_gosaka_path do %>
+<image src="../../../assets/016.jpeg" class="logo-image">
+  <% end %>
+
+  </div>
+
+  <div class="team-split">
+
+<%= link_to forums_cosaka_path do %>
+  <image src="../../../assets/017.jpeg" class="logo-image">
+  <% end %>
+
+
+  <%= link_to forums_kobe_path do %>
+    <image src="../../../assets/018.jpeg" class="logo-image">
+    <% end %>
+  
+  <%= link_to forums_hiroshima_path do %>
+    <image src="../../../assets/019.jpeg" class="logo-image">
+    <% end %>
+  
+  
+  <%= link_to forums_tokushima_path do %>
+    <image src="../../../assets/020.jpeg" class="logo-image">
+    <% end %>
+  
+  
+  <%= link_to forums_fukuoka_path do %>
+    <image src="../../../assets/021.jpeg" class="logo-image">
+    <% end %>
+  
+  <%= link_to forums_tosu_path do %>
+    <image src="../../../assets/022.jpeg" class="logo-image">
+    <% end %>
+  
+  <%= link_to forums_ouita_path do %>
+    <image src="../../../assets/023.jpeg" class="logo-image">
+    <% end %>
+  
+    </div>
+
+    </div>
+
+
+

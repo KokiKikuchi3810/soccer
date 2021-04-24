@@ -1,0 +1,11 @@
+<h1>横浜FC</h1>
+
+<%= link_to "新規投稿へ", new_forum_path %>
+</div>
+
+<% @forums.each do |t| %>
+    <% if t.category == "yokohamafc" %>  
+    <%= t.user.name %>
+    <p>内容:<%= t.team %></p>
+    <% end %>
+  <% end %>

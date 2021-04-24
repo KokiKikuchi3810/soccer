@@ -1,0 +1,12 @@
+<h1>コンサドーレ札幌</h1>
+
+
+<%= link_to "新規投稿へ", new_forum_path %>
+</div>
+
+<% @forums.each do |t| %>
+    <% if t.category == "sapporo" %>  
+    <%= t.user.name %>
+    <%= t.about %>
+    <% end %>
+  <% end %>

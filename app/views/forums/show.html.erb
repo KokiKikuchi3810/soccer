@@ -1,0 +1,35 @@
+<h1>GeekTwitter</h1>
+<h2>forum詳細</h2>
+
+<div class="forum">
+  <p><%= @forum.user.email %></p>
+  <h3><%= @forum.about %></h3>
+  <p><%= @forum.created_at %></p>
+
+  
+  <% if user_signed_in? %>
+      <% if current_user.already_liked?(@forum) %>
+          <%= link_to forum_like_path(@forum), method: :delete do %>
+
+            <i class="fas fa-heart"></i><%= @forum.likes.count %>
+          <% end %>
+      <% else %>
+          <%= link_to forum_likes_path(@forum), method: :post do %>
+
+            <i class="far fa-heart"></i><%= @forum.likes.count %>
+          <% end %>
+      <% end %>
+  <% else %>
+      <i class="far fa-heart"></i><%= @forum.likes.count %>
+  <% end %>
+
+
+</div>
+
+<h2>いいねしたユーザー</h2>
+<% @forum.liked_users.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>
+
+<%= link_to "編集する", edit_forum_path(@forum.id) %>
+<%= link_to "forum一覧に戻る", forums_path %>
