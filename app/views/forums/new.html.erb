@@ -1,20 +1,27 @@
+<div class="forums-new">
+
 <h1>J League Forum</h1>
+
+
+
+<div class="forums-main">
+
 <h3>新規投稿</h3>
 
-
 <%= form_for @forum do |f| %>
-
+  
   <%= f.select :category, [["J1総合", "J1"], ["コンサドーレ札幌", "sapporo"], ["ベガルタ仙台", "sendai"], ["鹿島アントラーズ", "kashima"], ["浦和レッズ", "urawa"], ["柏レイソル", "kashiwa"], ["FC東京", "fctokyo"], ["川崎フロンターレ", "kawasaki"], ["横浜FM", "yokohamafm"], ["横浜FC", "yokohamafc"], ["湘南ベルマーレ", "syonan"], ["清水エスパルス", "shimizu"], ["名古屋グランパス", "nagoya"], ["G大阪", "gosaka"], ["C大阪", "cosaka"], ["ヴィッセル神戸", "kobe"], ["サンフレッチェ広島", "hiroshima"], ["徳島ボルティス", "tokushima"], ["アビスパ福岡", "hukuoka"], ["サガン鳥栖", "tosu"], ["大分トリニータ", "ouita"]],  include_blank: "チーム選択" %>
   <div class="field">
-    <%= f.label :about %>
+    <%= f.label :投稿内容 %>
     <%= f.text_field :about, :size => 140 %>
   </div>
-  <%= f.submit "投稿する" %>
+  <div class="new-btn">
+  <%= f.submit "投稿する" , class: 'btn-square-soft' %>
 <% end %>
 
-
-
-<%= link_to "投稿一覧に戻る", forums_path %>
+<%= link_to "投稿一覧へ", forums_path , class: 'btn-square-soft' %>
+</div>
+</div>
 
 
 

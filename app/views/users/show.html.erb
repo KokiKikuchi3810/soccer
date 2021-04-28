@@ -1,13 +1,21 @@
-<h1>users</h1>
+
+<div class="sign-up">
+
+<div class="signup-second">
+
+<h3>マイページ</h3>
+
+
 <p>名前 : <%= @user.name %></p>
 <p>メールアドレス : <%= @user.email %></p>
-
 
 <% if current_user.id == @user.id %>
   <%= link_to "編集する", edit_user_registration_path %>
 <% end %>
 
-<h2>ユーザーの投稿一覧</h2>
+
+
+<h3>ユーザーの投稿一覧</h3>
 <% @user.forums.each do |t| %>
   <%= t.user.name %>
   <%= t.about %>
@@ -15,12 +23,15 @@
 <% end %>
 
 <!-- 以下はいいね機能を実装している場合-->
-<h2>ユーザーがいいねした投稿一覧</h2>
+<h3>ユーザーがいいねした投稿一覧</h3>
 <% @user.liked_forums.each do |t| %>
   <%= t.user.name %>
   <%= t.about %>
-   <%= button_to "削除する", forum_path(t.id), method: :delete %>
+  <%= button_to "削除する", forum_path(t.id), method: :delete %>
 <% end %>
 <!-- ここまで-->
 
 <%= link_to "forum一覧に戻る", forums_path %>
+
+</div>
+</div>

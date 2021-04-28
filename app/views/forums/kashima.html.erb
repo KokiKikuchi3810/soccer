@@ -1,11 +1,35 @@
+<div class="teams-top">
 <h1>鹿島アントラーズ</h1>
-
-<%= link_to "新規投稿へ", new_forum_path %>
+<div class="teams-btn">
+<%= link_to "新規投稿へ", new_forum_path , class: 'btn-square-soft'%>
+<%= link_to "投稿一覧へ", forums_path , class: 'btn-square-soft' %>
 </div>
 
+
+
+<div class="teams-main">
+
 <% @forums.each do |t| %>
-    <% if t.category == "kashima" %>  
+  <div class="forums-line">
+    <% if t.category == "kashima" %> 
     <%= t.user.name %>
-    <p>内容:<%= t.team %></p>
-    <% end %>
+    <p>内容:<%= t.about %></p>
+    <% if user_signed_in? %>
+  <% if current_user.already_liked?(t) %>
+      <%= link_to forum_like_path(id: t.id, forum_id: t.id), method: :delete do %>
+        <i class="fas fa-heart"></i><%= t.likes.count %>
+      <% end %>
+  <% else %>
+      <%= link_to forum_likes_path(id: t.id, forum_id: t.id), method: :post do %>
+        <i class="far fa-heart"></i><%= t.likes.count %>
+      <% end %>
   <% end %>
+<% else %>
+  <i class="far fa-heart"></i><%= t.likes.count %>
+<% end %>
+    <% end %>
+    
+</div>
+  <% end %>
+  </div>
+  </div>
