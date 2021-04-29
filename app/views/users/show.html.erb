@@ -14,22 +14,28 @@
 <% end %>
 
 
-
+<div class="user-top">
+<div class="user1">
 <h3>ユーザーの投稿一覧</h3>
 <% @user.forums.each do |t| %>
-  <%= t.user.name %>
+  <div class="user-one">
+
   <%= t.about %>
   <%= button_to "削除する", forum_path(t.id), method: :delete %>
+  </div>
 <% end %>
-
-<!-- 以下はいいね機能を実装している場合-->
+</div>
+<div class="user1">
 <h3>ユーザーがいいねした投稿一覧</h3>
 <% @user.liked_forums.each do |t| %>
+  <div class="user-one">
   <%= t.user.name %>
   <%= t.about %>
   <%= button_to "削除する", forum_path(t.id), method: :delete %>
+  </div>
 <% end %>
-<!-- ここまで-->
+</div>
+</div>
 
 <%= link_to "forum一覧に戻る", forums_path %>
 
