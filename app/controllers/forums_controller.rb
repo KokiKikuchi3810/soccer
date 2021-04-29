@@ -105,7 +105,7 @@ class ForumsController < ApplicationController
         @forums = Forum.all
       end
 
-      def hukuoka 
+      def fukuoka 
         @forums = Forum.all
       end
     

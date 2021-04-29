@@ -10,8 +10,9 @@
 <div class="teams-main">
 
 <% @forums.each do |t| %>
+  <% if t.category == "kashiwa" %> 
   <div class="forums-line">
-    <% if t.category == "kashiwa" %> 
+    
     <%= t.user.name %>
     <p>内容:<%= t.about %></p>
     <% if user_signed_in? %>
@@ -27,9 +28,9 @@
 <% else %>
   <i class="far fa-heart"></i><%= t.likes.count %>
 <% end %>
-    <% end %>
-    
+  
 </div>
+<% end %>
   <% end %>
   </div>
   </div>
